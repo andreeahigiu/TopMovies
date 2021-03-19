@@ -1,0 +1,263 @@
+*{
+    margin: 0px;
+    padding: 0px ;
+    box-sizing: border-box;
+}
+
+#description{
+    
+    background-image: rgb(241, 237, 237);
+}
+
+/* .bckcolor{
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), url("movie.jpg"));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    background-position: center top ;
+    padding: 1rem;
+    padding-top: 45%;
+    color: #fff;
+} */
+
+h1{
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    font-size: 4rem;
+     color: #fff;
+    line-height: 1;
+    position: absolute;
+    top: 100px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 60px;
+    /* background-color: orange; */
+    font-family: 'Quicksand', sans-serif;
+    
+}
+
+  .bckimage{
+    background-image:  url("movie.jpg");
+    height: 709px;
+
+    /* Create the parallax scrolling effect */
+     background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}  
+
+.logo{
+   color: white;
+    /*<img src=" ..."/> */
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+
+    overflow: hidden;
+     
+}
+.nav-bar li{
+    list-style: none;
+}
+
+.nav-bar a{
+    color: rgb(218, 214, 214);
+    text-decoration:none;
+    
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    
+}
+
+.menu{
+    display: none;
+    cursor: pointer;
+}
+.menu section{
+    width: 25px;
+    height: 3px;
+    background-color:rgb(218, 214, 214);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width:1024px){
+    .nav-bar{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 760px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-bar{
+        position: absolute;
+        right: 0px;
+        height: 675px;
+        top: 60px;
+        background-color:black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-bar li{
+        opacity: 0;
+    }
+    .menu{
+        display:block;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navBarFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+/* posterele filmelor */
+/* 
+.pictures{
+    display: flex;
+    border: 5px solid purple;
+  border-radius: 4px;
+  padding: 15px;
+  width: 100%;
+  
+ 
+ 
+} */
+/* .pictures img{
+    
+  border-radius: 4px;
+  padding: 5px;
+  padding-left: 100px;
+ 
+ 
+} */
+
+.grid-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows:repeat(100, 600px) ;
+    grid-gap: 20px;
+    grid-auto-flow: dense;
+    align-items:strech;
+    grid-template-areas: 
+    "a b";
+   
+}
+
+
+@media screen and (max-width: 700px) {
+    .grid-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows:repeat(100, 450px) ;
+        grid-gap: 20px;
+        grid-auto-flow: dense;
+        align-items:strech;
+        grid-template-areas: 
+        "a b";
+    }
+  }
+
+  @media screen and (max-width: 479px) {  /*mobile version */
+    .grid-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows:repeat(100, 300px) ;
+        grid-gap: 20px;
+        grid-auto-flow: dense;
+        align-items:stretch;
+        grid-template-areas: 
+        "a b";
+    }
+    .grid-element img{
+        border-radius: 5px;
+        max-width: 100%;
+      align-self: center;
+      padding:20px 20px;
+        border: 5px ;
+        /* object-fit: cover; */
+         height:auto; 
+       
+    }
+  }
+.grid-element{
+    
+    grid-gap: 10px;
+    align-items: center;
+    padding: 50px;
+    
+}
+
+.grid-element-1{
+    
+    grid-gap: 10px;
+    padding-left: 30px;
+    align-items: start;
+    /* //grid-row: span 100; */
+    grid-area: a;
+}
+
+.grid-element-2{
+    grid-area: b;
+    grid-gap:100px;
+    grid-row: span 1;
+    grid-gap:10px;
+    background-color: pink;
+  
+}
+
+
+
+.grid-element img{
+    border-radius: 5px;
+    max-width: 100%;
+  align-self: center;
+  padding:20px;
+    border: 5px ;
+    /* object-fit: cover; */
+     height:auto; 
+   
+}
+
+
